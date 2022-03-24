@@ -15,7 +15,7 @@
 <h1>Velkommen ${sessionScope.name}. Du er nu logget ind</h1>
 din saldo er ${sessionScope.account.balance} kr.
 
-<a href="LogoffServlet">Log af og gå til index</a>
+<a href="ServletLogoff">Log af og gå til index</a>
 
 <br>
 <br>
@@ -23,7 +23,7 @@ din saldo er ${sessionScope.account.balance} kr.
 <h2>Indsæt</h2>
 <h1>${requestScope.errorMessage}</h1>
 <br>
-<form action="TransactionServlet" method="post">
+<form action="ServletTransaction" method="post">
     <label for="amount">Angiv beløb</label><br>
     <input type="text" id="amount" name="amount" placeholder="0"><br>
     <input type="submit" name="type" value="Insert">

@@ -9,7 +9,7 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="ServletHello">Hello Servlet</a>
 <br>
 <br>
 ${requestScope.msg}
@@ -29,14 +29,13 @@ ${item.value.navn}  : ${item.value.saldo}
 </c:forEach>--%>
 
 
-<form action="LoginServlet">
+<form action="ServletLogin">
     <label for="user">Login:</label><br>
     <input type="text" id="user" name="user" value="User"><br>
     <label for="password">Skriv kode:</label><br>
     <input type="text" id="password" name="password" value="Password"><br><br>
     <input type="submit" value="Submit">
 </form>
-
 
 </body>
 </html>

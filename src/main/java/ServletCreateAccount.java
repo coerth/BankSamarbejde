@@ -3,7 +3,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "CreateAccountServlet", value = "/CreateAccountServlet")
+@WebServlet(name = "ServletCreateAccount", value = "/ServletCreateAccount")
 public class ServletCreateAccount extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
