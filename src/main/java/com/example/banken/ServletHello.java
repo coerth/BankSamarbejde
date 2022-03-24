@@ -16,7 +16,10 @@ public class ServletHello extends HttpServlet
 {
 
     Map<String , Account> accounts = new HashMap<>();
+/*
+    public void init() {
 
+<<<<<<< HEAD
     /*public void init()
     {
 
@@ -26,6 +29,14 @@ public class ServletHello extends HttpServlet
         Account account3 = new Account("long","1", 15);
         Account account4 = new Account("Kristoffer","1", 1500);
         Account account5 = new Account("søren","1", 2157);
+=======
+        Account account = new Account("nicolai", "1", 150);
+        Account account1 = new Account("denis", "1", 15);
+        Account account2 = new Account("Betyl", "1", 170);
+        Account account3 = new Account("long", "1", 15);
+        Account account4 = new Account("Kristoffer", "1", 1500);
+        Account account5 = new Account("søren", "1", 2157);
+>>>>>>> DenisBranch
 
         accounts.put(account.getName(), account);
         accounts.put(account1.getName(), account1);
@@ -36,10 +47,13 @@ public class ServletHello extends HttpServlet
 
     }*/
 
-    public void init(ServletConfig config) throws ServletException {
+   public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        /*this.config = config;
-        this.init();*/
+
+/*
+        this.config = config;
+        this.init();
+*/
 
 
         Account account = new Account("nicolai","1", 150);
@@ -59,12 +73,12 @@ public class ServletHello extends HttpServlet
         getServletContext().setAttribute("accounts", accounts);
     }
 
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
         ServletContext servletContext = getServletContext();
 
         servletContext.setAttribute("accounts", accounts);
+
 
         String msg = "her er en oversigt over kontisne";
 

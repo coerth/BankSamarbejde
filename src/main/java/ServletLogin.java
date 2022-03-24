@@ -17,7 +17,8 @@ public class ServletLogin extends HttpServlet {
 
        Map<String, Account> accounts   = (Map<String, Account>) getServletContext().getAttribute("accounts");
 
-       Account account = accounts.getOrDefault(name, null);
+       Account account = accounts   .getOrDefault(name, null);
+
 
         String errorMessage;
 
