@@ -13,32 +13,36 @@ public class ServletCreateAccount extends HttpServlet {
 
         String name = request.getParameter("newUser");
         String password = request.getParameter("newPassword");
-        String errorMessage;
 
-        Map<String, Account> accounts = (Map<String, Account>) getServletContext().getAttribute("accounts");
+        String errorMessage;
 
         HttpSession session = request.getSession();
 
-        if(accounts.containsKey(name))
+        Map<String, Account> accounts = (Map<String, Account>) getServletContext().getAttribute("accounts");
+
+            Account tempAccount = accounts.get(name);
+
+
+        if(tempAccount != null)
         {
             errorMessage = "Det navn er allerede i brug, vælg et andet";
             request.setAttribute("errorMessage", errorMessage);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
-        Account account = new Account(name, password,0);
+            Account account = new Account(name, password,0);
+
+            accounts.put(name, account);
 
 
-        accounts.put("account", account);
+            session.setAttribute("name", name);
+            session.setAttribute("account" ,account);
+            getServletContext().setAttribute("accounts", accounts);
 
 
-        session.setAttribute("name", name);
-        session.setAttribute("accounts", accounts);
+            request.getRequestDispatcher("WEB-INF/UserSite.jsp").forward(request, response);
+        }
 
-
-        request.getRequestDispatcher("WEB-INF/UserSite.jsp").forward(request,response);
-
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

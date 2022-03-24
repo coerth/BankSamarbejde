@@ -18,12 +18,12 @@ ${requestScope.errorMessage}
 <br>
 <br>
 
-<%--<c:forEach items="${applicationScope.kontis}" var="item" >
+<c:forEach items="${applicationScope.accounts}" var="item" >
 
-${item.value.navn}  : ${item.value.saldo}
+${item.value.name}  : ${item.value.balance}
     <br>
 
-</c:forEach>--%>
+</c:forEach>
 
 <h2>Har du allerede en bruger? Log in her: </h2>
 <form action="ServletLogin">
