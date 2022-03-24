@@ -50,10 +50,6 @@ public class ServletHello extends HttpServlet
    public void init(ServletConfig config) throws ServletException {
         super.init(config);
 
-/*
-        this.config = config;
-        this.init();
-*/
 
 
         Account account = new Account("nicolai","1", 150);

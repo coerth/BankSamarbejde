@@ -3,13 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Bank og Kebab</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="ServletHello">Hello Servlet</a>
+
 <br>
 <br>
 ${requestScope.msg}
