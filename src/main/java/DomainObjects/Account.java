@@ -29,6 +29,10 @@ public class Account
         return balance;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public int deposit(int i)
     {
 

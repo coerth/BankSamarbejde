@@ -33,10 +33,10 @@ din saldo er ${sessionScope.account.balance} kr.
 </form>
 <br>
 <h3>Skift password</h3>
-<br>
+${requestScope.messagePassword}
 <form action="ServletChangePassword" method="post">
     <label for="password"></label><br>
-    <input type="text" id="oldPassword" name="password" placeholder="Skriv dit nuværende password"><br>
+    <input type="text" id="oldPassword" name="oldPassword" placeholder="Skriv dit nuværende password"><br>
     <label for="newPassword"></label><br>
     <input type="text" id="newPassword" name="newPassword" placeholder="Skriv det nye password"><br>
     <input type="submit" name="type" value="Change">
