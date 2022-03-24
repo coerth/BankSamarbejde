@@ -31,9 +31,10 @@ din saldo er ${sessionScope.account.balance} kr.
     <input type="submit" name="type" value="Insert">
     <input type="submit" name="type" value="Withdraw">
 </form>
-
-<h3>Slet din konto</h3>
 <br>
+
+<br>
+<h3>Slet din konto</h3>
 <form action="ServletDeleteAccount" method="post">
     <label for="password"></label><br>
     <input type="text" id="password" name="password" placeholder="Skriv dit password"><br>
