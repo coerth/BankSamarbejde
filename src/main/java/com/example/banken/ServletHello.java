@@ -64,7 +64,7 @@ public class ServletHello extends HttpServlet
     {
         ServletContext servletContext = getServletContext();
 
-        servletContext.setAttribute("account", accounts);
+        servletContext.setAttribute("accounts", accounts);
 
         String msg = "her er en oversigt over kontisne";
 

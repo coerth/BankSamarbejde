@@ -15,7 +15,7 @@ public class ServletLogin extends HttpServlet {
         String name = request.getParameter("user");
         String password = request.getParameter("password");
 
-       Map<String, Account> accounts   = (Map<String, Account>) getServletContext().getAttribute("account");
+       Map<String, Account> accounts   = (Map<String, Account>) getServletContext().getAttribute("accounts");
 
        Account account = accounts.getOrDefault(name, null);
 
