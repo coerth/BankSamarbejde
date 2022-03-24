@@ -33,7 +33,7 @@ din saldo er ${sessionScope.account.balance} kr.
 <%--<br>
 <h2>Hæv</h2>
 <br>
-<form action="TransactionServlet" method="post">
+<form action="ServletTransaction" method="post">
     <label for="WithdrawAmount">Angiv beløb</label><br>
     <input type="text" id="WithdrawAmount" name="WithdrawAmount" value="0"><br>
     <input type="submit" name="type" value="" >

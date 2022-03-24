@@ -4,7 +4,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "LogoffServlet", value = "/LogoffServlet")
-public class LogoffServlet extends HttpServlet {
+public class ServletLogoff extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
