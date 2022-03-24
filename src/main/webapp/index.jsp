@@ -28,9 +28,9 @@ ${item.value.name}  : ${item.value.balance}
 <h2>Har du allerede en bruger? Log in her: </h2>
 <form action="ServletLogin">
     <label for="user">Login:</label><br>
-    <input type="text" id="user" name="user" value="User"><br>
+    <input type="text" id="user" name="user" placeholder="User"><br>
     <label for="password">Skriv kode:</label><br>
-    <input type="text" id="password" name="password" value="Password"><br><br>
+    <input type="text" id="password" name="password" placeholder="Password"><br><br>
     <input type="submit" value="Submit">
 </form>
 
