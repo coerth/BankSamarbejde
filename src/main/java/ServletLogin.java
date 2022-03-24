@@ -14,11 +14,13 @@ public class ServletLogin extends HttpServlet {
 
         String name = request.getParameter("user");
         String password = request.getParameter("password");
+        int loginAttempt = 0;
 
        Map<String, Account> accounts   = (Map<String, Account>) getServletContext().getAttribute("accounts");
 
        Account account = accounts   .getOrDefault(name, null);
 
+       HttpSession session = request.getSession();
 
         String errorMessage;
 
@@ -31,12 +33,22 @@ public class ServletLogin extends HttpServlet {
 
        if(!account.getPassword().equals(password) )
        {
-           errorMessage = "dit login er forkert";
+
+           account.wrongLoginAttempt();
+           errorMessage = "Dit password er forkert, prøv igen, du har nu brugt " + account.getLoginAttempt() + " forsøg!";
            request.setAttribute("errorMessage", errorMessage);
+
+           session.setAttribute("name", name);
+           //session.setAttribute("loginAttempt", loginAttempt);
+
+           if (account.getLoginAttempt()==3) {
+               account.setAccountLock(true);
+
+               request.getRequestDispatcher("WEB-INF/AccountLocked.jsp").forward(request, response);
+           }
            request.getRequestDispatcher("index.jsp").forward(request, response);
        }
 
-       HttpSession session = request.getSession();
 
        session.setAttribute("name", name);
        session.setAttribute("account", account);
