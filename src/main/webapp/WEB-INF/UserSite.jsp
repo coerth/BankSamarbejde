@@ -32,7 +32,15 @@ din saldo er ${sessionScope.account.balance} kr.
     <input type="submit" name="type" value="Withdraw">
 </form>
 <br>
-
+<h3>Skift password</h3>
+<br>
+<form action="ServletChangePassword" method="post">
+    <label for="password"></label><br>
+    <input type="text" id="oldPassword" name="password" placeholder="Skriv dit nuværende password"><br>
+    <label for="newPassword"></label><br>
+    <input type="text" id="newPassword" name="newPassword" placeholder="Skriv det nye password"><br>
+    <input type="submit" name="type" value="Change">
+</form>
 <br>
 <h3>Slet din konto</h3>
 <form action="ServletDeleteAccount" method="post">
