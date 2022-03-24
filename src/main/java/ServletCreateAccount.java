@@ -13,14 +13,24 @@ public class ServletCreateAccount extends HttpServlet {
 
         String name = request.getParameter("newUser");
         String password = request.getParameter("newPassword");
-
-        Account account = new Account(name, password,0);
+        String errorMessage;
 
         Map<String, Account> accountMap = (Map<String, Account>) getServletContext().getAttribute("accounts");
 
+        HttpSession session = request.getSession();
+
+        if(accountMap.containsKey(name))
+        {
+            errorMessage = "Det navn er allerede i brug, vælg et andet";
+            request.setAttribute("errorMessage", errorMessage);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+        Account account = new Account(name, password,0);
+
+
         accountMap.put("account", account);
 
-        HttpSession session = request.getSession();
 
         session.setAttribute("name", name);
         session.setAttribute("account", account);
