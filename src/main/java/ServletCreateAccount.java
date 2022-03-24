@@ -39,9 +39,9 @@ public class ServletCreateAccount extends HttpServlet {
             session.setAttribute("account" ,account);
             getServletContext().setAttribute("accounts", accounts);
 
-
             request.getRequestDispatcher("WEB-INF/UserSite.jsp").forward(request, response);
         }
+
 
 
     @Override

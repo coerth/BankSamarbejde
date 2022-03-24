@@ -38,7 +38,7 @@ din saldo er ${sessionScope.account.balance} kr.
 <form action="ServletDeleteAccount" method="post">
     <label for="password"></label><br>
     <input type="text" id="password" name="password" placeholder="Skriv dit password"><br>
-    <input type="submit" name="type" value="Delete">
+    <input type="submit" name="type" value="Delete" placeholder="Slet">
 </form>
 
 
