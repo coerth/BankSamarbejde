@@ -28,7 +28,7 @@ ${item.value.navn}  : ${item.value.saldo}
 
 </c:forEach>--%>
 
-
+<h2>Har du allerede en bruger? Log in her: </h2>
 <form action="ServletLogin">
     <label for="user">Login:</label><br>
     <input type="text" id="user" name="user" value="User"><br>
@@ -36,5 +36,17 @@ ${item.value.navn}  : ${item.value.saldo}
     <input type="text" id="password" name="password" value="Password"><br><br>
     <input type="submit" value="Submit">
 </form>
+
+
+
+<h2>Ny bruger? Opret en konto her: </h2>
+<form action="ServletCreateAccount">
+    <label for="newUser">Vælg dit unikke brugernavn her: </label><br>
+    <input type="text" id="newUser" name="newUser" placeholder="newUser"><br>
+    <label for="newPassword">Vælg et kodeord her:</label><br>
+    <input type="text" id="newPassword" name="newPassword" placeholder="newPassword"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
 </body>
 </html>
