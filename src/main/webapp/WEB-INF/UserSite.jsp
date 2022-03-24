@@ -14,8 +14,10 @@
 
 <h1>Velkommen ${sessionScope.name}. Du er nu logget ind</h1>
 din saldo er ${sessionScope.account.balance} kr.
+<<<<<<< HEAD
 
 <a href="ServletLogoff">Log af og gå til index</a>
+
 
 <br>
 <br>
@@ -29,6 +31,8 @@ din saldo er ${sessionScope.account.balance} kr.
     <input type="submit" name="type" value="Insert">
     <input type="submit" name="type" value="Withdraw">
 </form>
+
+
 
 <%--<br>
 <h2>Hæv</h2>

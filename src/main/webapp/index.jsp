@@ -37,5 +37,7 @@ ${item.value.navn}  : ${item.value.saldo}
     <input type="submit" value="Submit">
 </form>
 
+<<<<<<< HEAD
+
 </body>
 </html>
