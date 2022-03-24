@@ -16,46 +16,42 @@ public class ServletLogin extends HttpServlet {
         String password = request.getParameter("password");
         int loginAttempt = 0;
 
-       Map<String, Account> accounts   = (Map<String, Account>) getServletContext().getAttribute("accounts");
+        Map<String, Account> accounts = (Map<String, Account>) getServletContext().getAttribute("accounts");
 
-       Account account = accounts   .getOrDefault(name, null);
+        Account account = accounts.getOrDefault(name, null);
 
-       HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
 
         String errorMessage;
 
-       if(account == null)
-       {
-           errorMessage = "Kontoen fandtes ikke";
-           request.setAttribute("errorMessage", errorMessage);
-           request.getRequestDispatcher("index.jsp").forward(request, response);
-       }
+        if (account == null) {
+            errorMessage = "Kontoen fandtes ikke";
+            request.setAttribute("errorMessage", errorMessage);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
 
-       if(!account.getPassword().equals(password) )
-       {
+        if (!account.getPassword().equals(password)) {
 
-           account.wrongLoginAttempt();
-           errorMessage = "Dit password er forkert, prøv igen, du har nu brugt " + account.getLoginAttempt() + " forsøg!";
-           request.setAttribute("errorMessage", errorMessage);
+            account.wrongLoginAttempt();
+            errorMessage = "Dit password er forkert, prøv igen, du har nu brugt " + account.getLoginAttempt() + " forsøg!";
+            request.setAttribute("errorMessage", errorMessage);
 
-           session.setAttribute("name", name);
-           //session.setAttribute("loginAttempt", loginAttempt);
+            session.setAttribute("name", name);
+            //session.setAttribute("loginAttempt", loginAttempt);
 
-           if (account.getLoginAttempt()==3) {
-               account.setAccountLock(true);
+            if (account.getLoginAttempt() == 3) {
+                account.setAccountLock(true);
 
-               request.getRequestDispatcher("WEB-INF/AccountLocked.jsp").forward(request, response);
-           }
-           request.getRequestDispatcher("index.jsp").forward(request, response);
-       }
-
-
-       session.setAttribute("name", name);
-       session.setAttribute("account", account);
-
-        request.getRequestDispatcher("WEB-INF/UserSite.jsp").forward(request,response);
-       //
-
+                request.getRequestDispatcher("WEB-INF/AccountLocked.jsp").forward(request, response);
+            }
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else {
+            session.setAttribute("name", name);
+            session.setAttribute("account", account);
+            request.getRequestDispatcher("WEB-INF/UserSite.jsp").forward(request, response);
+            account.loginSuccessful();
+            //
+        }
     }
 
     @Override

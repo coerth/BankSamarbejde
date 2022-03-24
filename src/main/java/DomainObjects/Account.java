@@ -17,6 +17,11 @@ public class Account
         return loginAttempt;
     }
 
+    public int loginSuccessful() {
+        loginAttempt = 0;
+        return loginAttempt;
+    }
+
     public void setLoginAttempt(int loginAttempt) {
         this.loginAttempt = loginAttempt;
     }
