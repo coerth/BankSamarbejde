@@ -21,7 +21,7 @@ public class ServletDeleteAccount extends HttpServlet {
         Account account = (Account) session.getAttribute("account");
         String enteredPassword = request.getParameter("password");
         Map<String, Account> accounts = (Map<String, Account>) getServletContext().getAttribute("accounts");
-        accounts.c
+
         String accountPassword = account.getPassword();
 
         if(enteredPassword.equals(accountPassword))
