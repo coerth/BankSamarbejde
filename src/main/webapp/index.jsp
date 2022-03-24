@@ -37,5 +37,13 @@ ${item.value.navn}  : ${item.value.saldo}
     <input type="submit" value="Submit">
 </form>
 
+<form action="ServletCreateAccount">
+    <label for="newUser">Vælg dit unikke brugernavn her: </label><br>
+    <input type="text" id="newUser" name="newUser" value="newUser"><br>
+    <label for="newPassword">Vælg et kodeord her:</label><br>
+    <input type="text" id="newPassword" name="newPassword" value="newPassword"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
 </body>
 </html>
