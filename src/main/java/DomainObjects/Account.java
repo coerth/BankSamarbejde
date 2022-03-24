@@ -5,6 +5,30 @@ public class Account
     private String name;
     private String password;
     private int balance;
+    private boolean accountLock = false;
+    private int loginAttempt;
+
+    public int wrongLoginAttempt(){
+     loginAttempt++;
+        return loginAttempt;
+    }
+
+    public int getLoginAttempt() {
+        return loginAttempt;
+    }
+
+    public void setLoginAttempt(int loginAttempt) {
+        this.loginAttempt = loginAttempt;
+    }
+
+
+    public boolean isAccountLock() {
+        return accountLock;
+    }
+
+    public void setAccountLock(boolean accountLock) {
+        this.accountLock = accountLock;
+    }
 
 
     public Account(String name, String password, int balance)
@@ -39,6 +63,8 @@ public class Account
 
         return balance;
     }
+
+
 
     public int withdraw(int i)
     {
