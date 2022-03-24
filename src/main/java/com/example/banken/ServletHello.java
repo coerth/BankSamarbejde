@@ -17,7 +17,7 @@ public class ServletHello extends HttpServlet
 
     Map<String , Account> accounts = new HashMap<>();
 
-    public void init()
+    /*public void init()
     {
 
         Account account = new Account("nicolai","1", 150);
@@ -34,7 +34,7 @@ public class ServletHello extends HttpServlet
         accounts.put(account4.getName(), account4);
         accounts.put(account5.getName(), account5);
 
-    }
+    }*/
 
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -56,7 +56,7 @@ public class ServletHello extends HttpServlet
         accounts.put(account4.getName(), account4);
         accounts.put(account5.getName(), account5);
 
-        getServletContext().setAttribute("konti", accounts);
+        getServletContext().setAttribute("accounts", accounts);
     }
 
 
@@ -64,7 +64,7 @@ public class ServletHello extends HttpServlet
     {
         ServletContext servletContext = getServletContext();
 
-        servletContext.setAttribute("kontis", accounts);
+        servletContext.setAttribute("account", accounts);
 
         String msg = "her er en oversigt over kontisne";
 

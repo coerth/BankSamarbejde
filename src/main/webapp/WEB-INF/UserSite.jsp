@@ -14,7 +14,7 @@
 
 <h1>Velkommen ${sessionScope.name}. Du er nu logget ind</h1>
 din saldo er ${sessionScope.account.balance} kr.
-<<<<<<< HEAD
+
 
 <a href="ServletLogoff">Log af og gå til index</a>
 
@@ -32,6 +32,13 @@ din saldo er ${sessionScope.account.balance} kr.
     <input type="submit" name="type" value="Withdraw">
 </form>
 
+<h3>Slet din konto</h3>
+<br>
+<form action="ServletDeleteAccount" method="post">
+    <label for="password">Angiv beløb</label><br>
+    <input type="text" id="password" name="password" placeholder="Skriv dit password"><br>
+    <input type="submit" name="type" value="Delete">
+</form>
 
 
 <%--<br>
