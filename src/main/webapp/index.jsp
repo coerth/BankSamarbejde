@@ -25,7 +25,7 @@ ${item.value.name}  : ${item.value.balance}
 
 </c:forEach>
 
-<h2>Har du allerede en bruger? Log in her: </h2>
+<h2>Har du allerede en bruger? Log ind her: </h2>
 <form action="ServletLogin">
     <label for="user">Login:</label><br>
     <input type="text" id="user" name="user" placeholder="User"><br>
