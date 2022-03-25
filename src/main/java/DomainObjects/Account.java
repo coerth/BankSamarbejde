@@ -35,7 +35,6 @@ public class Account
         this.accountLock = accountLock;
     }
 
-
     public Account(String name, String password, int balance)
     {
         this.name = name;
